@@ -1,5 +1,5 @@
 def dfs(graph, start, visited=None, to=0, path_len=0):
-    # Vertex verification
+    # Верефикация
     if start not in graph.keys():
         raise ValueError
 
@@ -9,13 +9,13 @@ def dfs(graph, start, visited=None, to=0, path_len=0):
     if start == to:
         return visited, path_len, True
 
-    # Initialization
+    # Инициализация
     if visited is None:
         visited = set()
 
     visited.add(start)
 
-    # Main part
+    # Главная часть
     for next in graph[start] - visited:
         path_len += 1
         _, _, is_find = dfs(graph, next, visited, to=to, path_len=path_len)
