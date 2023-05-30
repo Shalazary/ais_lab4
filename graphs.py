@@ -1,4 +1,10 @@
 def dfs(graph, start, visited=None, to=0, path_len=0):
+    if start not in graph.keys():
+        raise ValueError
+
+    if to not in graph.keys():
+        raise ValueError
+
     if start == to:
         return visited, path_len, True
 
